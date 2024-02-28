@@ -11,7 +11,7 @@ module.exports = {
     loadPage: function(url, waitInSeconds) {
 
         // use either passed in timeout or global default
-        var timeout = (waitInSeconds) ? (waitInSeconds * 25000) : DEFAULT_TIMEOUT;
+        var timeout = (waitInSeconds) ? (waitInSeconds * 10000) : DEFAULT_TIMEOUT;
 
         // load the url and wait for it to complete
         return driver.get(url).then(function() {
