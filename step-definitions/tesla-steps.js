@@ -11,17 +11,17 @@ module.exports = function () {
     //     return page.tesla.clickElement('ShopAvailable')
     // })
 
-    this.When('I click on Vehicles Button', function(){
-        return page.tesla.clickElement('Vehicles')
-    })
+    // this.When('I click on Vehicles Button', function(){
+    //     return page.tesla.clickElement('Vehicles')
+    // })
 
-    this.When('I click on InventoryLink', function(){
-        return page.tesla.clickElement('InventoryLink')
-    })
+    // this.When(/^I click on "([^"]*)"$/, function(objectKey){
+    //     return page.tesla.clickElement(objectKey)
+    // })
 
-    this.Then('I should see Inventory Header', function(){
-        return page.tesla.elementExists('InventoryHeader')
-    })
+    // this.Then('I should see Inventory Header', function(){
+    //     return page.tesla.elementExists('InventoryHeader')
+    // })
 
 
 

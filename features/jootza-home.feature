@@ -2,7 +2,7 @@ Feature: As a jootza customer, I want to be able to navigate to landing page so 
 
   @jootza @jootzaLanding1
   Scenario: Customer is displayed with jootza.com landing page
-    Given I am on the Jootza portal
+    Given I am on the "JootzaPortal" website
     #When I click on LoginButton
     #Then I should see LoginHeader
 
