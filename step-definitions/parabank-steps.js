@@ -33,7 +33,21 @@ module.exports = function () {
 
     this.When(/^I enter password as "([^"]*)"$/, function (objKey1) {
         return page.parabank.inputPassword(objKey1);
-        });
+    });
 
-    
+    this.When(/^I am logging into the ParaBank Website as "([^"]*)" and "([^"]*)"$/, function (custUsername, custPassword) {
+        console.log("url : " + page.parabank.parabank);
+        helpers.loadPage(page.parabank.url);
+        page.parabank.inputElement('custUsername', custUsername);
+        page.parabank.inputElement('custPassword', custPassword);
+        page.parabank.clickElement('LoginActionButton');
+        page.parabank.elementExists('OpenNewAccount');
+        return;
+    });
+
+    // this.When(/^I enter "([^"]*)" as "([^"]*)"$/, function (inputname, inputvalue) {
+    //     return page.parabank.inputElement(inputname, inputvalue);
+    // });
+
+
 };

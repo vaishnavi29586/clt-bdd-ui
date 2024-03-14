@@ -13,15 +13,32 @@ module.exports = {
         AboutUsLink: '//*[@id="headerPanel"]/ul[1]/li[2]/a',
         ServicesLink: '//*[@id="headerPanel"]/ul[1]/li[3]/a',
         ParaSoftDemoWebsiteHeader:'//*[@id="rightPanel"]/h1',
+       
         CustomerLoginDetails: '//*[@id="loginPanel"]/form/div[1]',
         LoginActionButton: '//*[@id="loginPanel"]/form/div[3]/input',
         ErrorMessage: '//*[@id="rightPanel"]/p',
         name: by.name('username'),
         pwd: by.name('password'),
+        
+        OpenNewAccount: '//*[@id="leftPanel"]/ul/li[1]/a',
+        custUsername: by.name('username'),
+        custPassword: by.name('password'),
+        Checking: '//*[@id="type"]',
+        Amount: '//*[@id="fromAccountId"]',
+        OpenNewAccountButton: '//*[@id="rightPanel"]/div/div/form/div/input',
+        AccountOpenedPage: '//*[@id="rightPanel"]/div/div/h1',
+        
+        SOAPservicesHeader: '//*[@id="rightPanel"]/span[1]',
+        ProductsLink: '//*[@id="headerPanel"]/ul[1]/li[4]/a',
+        ProductsPage: '//*[@id="main"]/section[2]/div[2]/div/div/div[1]/p[1]',
+
+        TransferFunds:'//*[@id="leftPanel"]/ul/li[3]/a',
+        
         ForgotLogin: '//*[@id="loginPanel"]/p[1]/a',
         CustomerLookuppage: '//*[@id="rightPanel"]/h1',
         LoginInfo: '//*[@id="lookupForm"]/table/tbody/tr[8]/td[2]/input',
         Customernotfound: '//*[@id="rightPanel"]/p',
+
         fstname: by.name('firstName'),
         lstname: by.name('lastName'),
         address: by.name('address.street'),
@@ -32,6 +49,7 @@ module.exports = {
         RegisterButton: '//*[@id="loginPanel"]/p[2]/a',
         RegisterActionButton: '//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input',
         RegistrationSuccessful:'//*[@id="rightPanel"]/h1',
+
         firstname: by.name('customer.firstName'),
         lastname: by.name('customer.lastName'),
         address1: by.name('customer.address.street'),
@@ -50,7 +68,7 @@ module.exports = {
         //     // eslint-disable-next-line no-console
         //console.log('The objectKey is: ' + objectKey)
         const selector = page.parabank.elements[objectKey];
-        console.log('The Xpath expression is: ' + selector)
+        console.log('The Xpath expression is: ' + selector);
         await driver.sleep(2000);
         return driver.findElement(By.xpath(selector)).click();
     },
@@ -80,6 +98,19 @@ module.exports = {
         await driver.sleep(5000);
         return driver.findElement(By.xpath(selector));
     },
+
+    // inputUserName: async function (val) {
+    //     var selector = page.parabank.elements['cusUsername'];
+    //     await driver.sleep(2000);
+    //     return driver.findElement(selector).sendKeys(val);
+
+    // },
+    // inputPassword: async function (val) {
+    //     var selector = page.parabank.elements['cusPassword'];
+    //     await driver.sleep(2000);
+    //     return driver.findElement(selector).sendKeys(val);
+
+    // },
 
     
 
